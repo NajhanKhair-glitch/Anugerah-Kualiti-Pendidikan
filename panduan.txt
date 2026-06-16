@@ -1,0 +1,64 @@
+SISTEM AKP HEM 2026 — SK JENJAROM
+==================================
+
+Pakej ini ada 3 perkara penting:
+  • index.html      ← fail utama sistem (MESTI di bahagian paling atas / root)
+  • folder dokumen  ← semua 53 dokumen rasmi, disusun ikut kod item
+  • PANDUAN.txt      ← fail ini
+
+==================================================================
+CARA A (DISYORKAN): LETAK ATAS TALIAN GUNA GITHUB PAGES
+==================================================================
+Hasil: satu pautan (link) yang boleh dibuka di telefon atau komputer,
+tanpa perlu extract zip. Percuma.
+
+1. Pergi ke  https://github.com  → daftar / log masuk.
+2. Klik butang "+" (kanan atas) → "New repository".
+3. Repository name: taip  akp-hem-2026
+   Pilih "Public" → klik "Create repository".
+4. Di halaman repo baru, klik pautan "uploading an existing file".
+5. Buka folder pakej ini. Pilih (highlight) KETIGA-TIGA:
+        index.html  ,  folder dokumen  ,  PANDUAN.txt
+   Seret (drag) masuk ke kotak muat naik GitHub.
+   *** PENTING: seret fail index.html itu sendiri — JANGAN seret
+       folder "Sistem-AKP-HEM-2026". index.html mesti di paling atas. ***
+6. Tunggu semua fail siap naik (96 MB — ambil beberapa minit).
+   Kemudian klik butang hijau "Commit changes".
+7. Klik tab "Settings" → menu kiri "Pages".
+8. Bahagian "Branch": pilih  main  dan  / (root)  → klik "Save".
+9. Tunggu 1–2 minit, refresh. Pautan akan keluar di atas, contoh:
+        https://NAMA-ANDA.github.io/akp-hem-2026/
+   Buka pautan itu — sistem siap digunakan, dokumen boleh dibuka.
+
+Jika nampak "404 File not found":
+  - Pastikan index.html ada di ROOT (bukan dalam subfolder).
+  - Tunggu beberapa minit lagi (GitHub Pages ambil masa kali pertama).
+
+==================================================================
+CARA B (BACKUP): BUKA TERUS DI KOMPUTER
+==================================================================
+1. Klik kanan fail ZIP → "Extract All" (Windows). JANGAN buka terus
+   dari dalam zip — itu punca ralat "ERR_FILE_NOT_FOUND".
+2. Buka folder yang telah di-extract.
+3. Pastikan "index.html" dan folder "dokumen" ADA BERSEBELAHAN.
+4. Klik dua kali "index.html".
+(Cara ini untuk komputer sahaja; kurang sesuai untuk telefon.)
+
+==================================================================
+CARA GUNA SISTEM
+==================================================================
+• Buka Aspek > Item. Dokumen rasmi dipaparkan warna KUNING
+  ("Dokumen sistem") — ketik untuk buka.
+• Butang "+ Lampiran fail" untuk tambah dokumen sendiri (disimpan
+  dalam peranti anda sahaja).
+
+DOKUMEN DALAM GOOGLE DRIVE (perlu tindakan anda)
+3 item ini dokumennya di Google Drive — dalam app ia papar PAUTAN BIRU:
+  • Item 2.2  Borang PB1, PB2 & Dokumen Sokongan
+  • Item 3.3  Laporan Guru Bertugas
+  • Item 3.6  Surat Setuju Terima RMT/PSS
+Muat turun dari Drive, letak dalam folder dokumen, dan lampirkan
+melalui app jika mahu jadikan ia dokumen tetap.
+
+Nota: dokumen imbasan besar telah dimampatkan (300 dpi, masih jelas)
+supaya muat naik lancar dan cepat dibuka di telefon.
