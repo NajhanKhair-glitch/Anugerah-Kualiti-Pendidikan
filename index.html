@@ -176,7 +176,14 @@
   .acc ol li{margin-bottom:5px}
   .carta-img{width:100%;display:block;border-radius:11px;border:1px solid var(--line)}
   .imgnote{font-size:11.5px;color:var(--faint);text-align:center;margin-top:8px}
-  .footer{text-align:center;font-size:11px;color:var(--faint);padding:24px 18px;line-height:1.6}
+  .sheet-cta{display:flex;align-items:center;gap:14px;margin-top:18px;text-decoration:none;background:var(--card);border:1px solid var(--line-2);border-left:4px solid var(--gold);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);transition:.15s}
+.sheet-cta:active{transform:scale(.99)}
+.sheet-cta .ic{flex:none;width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy),var(--navy-3));color:var(--gold-2);font-size:20px}
+.sheet-cta .tx{flex:1;min-width:0}
+.sheet-cta .tx b{display:block;font-family:var(--disp);font-weight:600;font-size:15px;color:var(--navy);line-height:1.2}
+.sheet-cta .tx span{font-size:12px;color:var(--muted)}
+.sheet-cta .ch{flex:none;color:var(--gold-deep);font-size:18px}
+.footer{text-align:center;font-size:11px;color:var(--faint);padding:24px 18px;line-height:1.6}
   .fileitem{display:flex;align-items:center;gap:10px;padding:10px 11px;border:1px solid var(--line);border-radius:11px;background:var(--paper);margin-bottom:8px}
   .fileitem .fi{flex:1;min-width:0;cursor:pointer}
   .fileitem .fi b{font-size:13px;color:var(--navy);font-weight:600;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -237,6 +244,11 @@
           <div class="stats"><div><div class="k">Markah (50)</div><div class="v" id="homeMark">0.0</div></div><div><div class="k">Lengkap</div><div class="v"><span id="homeDone">0</span>/<span id="homeTotal">44</span></div></div></div>
         </div>
       </div>
+      <a class="sheet-cta" href="https://docs.google.com/spreadsheets/d/1Z--UF5dd03U7FmlKj7L9OOh6DXcKEcyzErE7JEsx7UU/edit?usp=sharing" target="_blank" rel="noopener">
+        <span class="ic">📊</span>
+        <span class="tx"><b>Borang Penilaian AKP HEM 2026</b><span>Buka borang skor rasmi di Google Sheets</span></span>
+        <span class="ch">›</span>
+      </a>
       <div class="sec-label"><span id="aspekCount">8 Aspek Pemantauan</span><div class="rule"></div></div>
       <div class="aspek-grid" id="aspekGrid"></div>
       <button class="addbtn" id="addAspek">＋ Tambah Aspek</button>
