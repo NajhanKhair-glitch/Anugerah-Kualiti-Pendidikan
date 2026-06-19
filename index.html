@@ -221,6 +221,24 @@
   .lightbox img{max-width:100%;max-height:88vh;border-radius:12px;box-shadow:var(--shadow-lg)}
   @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
 </style>
+
+<style id="akphem-admin-css">
+.sechead{font:600 11px/1 ui-sans-serif,system-ui;letter-spacing:.09em;text-transform:uppercase;color:#c9a24b;margin:12px 2px 6px;opacity:.9}
+.fileitem .adm{background:transparent;border:0;color:#9aa6bd;cursor:pointer;padding:5px;border-radius:8px;line-height:0}
+.fileitem .adm:hover{background:rgba(255,255,255,.08);color:#fff}
+.fileitem .adm.del:hover{color:#ff6b6b}
+.docmodal{position:fixed;inset:0;background:rgba(6,12,26,.74);display:flex;align-items:center;justify-content:center;z-index:99999;padding:18px}
+.docmodal .dm-card{background:#0e1a33;border:1px solid rgba(201,162,75,.35);border-radius:16px;max-width:440px;width:100%;padding:18px 16px;box-shadow:0 20px 60px rgba(0,0,0,.55)}
+.docmodal .dm-h{font:700 16px/1.25 ui-sans-serif,system-ui;color:#fff;margin-bottom:6px}
+.docmodal label{display:block;font:600 10.5px/1.3 ui-sans-serif,system-ui;color:#c9a24b;margin:12px 0 5px;text-transform:uppercase;letter-spacing:.05em}
+.docmodal input{width:100%;box-sizing:border-box;background:#0a1428;border:1px solid rgba(255,255,255,.16);border-radius:10px;color:#fff;padding:11px 12px;font:400 14px/1.3 ui-sans-serif,system-ui}
+.docmodal input::placeholder{color:#5e6b85}
+.docmodal input:focus{outline:none;border-color:#c9a24b}
+.docmodal .dm-btns{display:flex;gap:10px;margin-top:18px}
+.docmodal .dm-btns button{flex:1;border:0;border-radius:10px;padding:12px;font:700 14px/1 ui-sans-serif,system-ui;cursor:pointer}
+.docmodal .dm-cancel{background:rgba(255,255,255,.1);color:#cdd6e6}
+.docmodal .dm-save{background:linear-gradient(180deg,#d8b25a,#bd9335);color:#1a1205}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -292,6 +310,205 @@ const LS="akphem2026", MK="akphem2026_model";
 const SEED = JSON.parse(JSON.stringify({aspek:DATA.aspek, items:DATA.items}));
 const DRIVEFILES = {"11.iii": [{"name": "Rekod Penggunaan Bilik Kesihatan.pdf", "url": "https://drive.google.com/file/d/1xvKQJKGJUCTJDX7QpOAsngLDj-By2aBG/view", "type": "application/pdf", "size": 884582}], "11.i": [{"name": "Surat Pekeliling Kesihatan.pdf", "url": "https://drive.google.com/file/d/1GgNzJ6CxAvlusCdPfX5umoRBLIuHLHT7/view", "type": "application/pdf", "size": 507226}], "10.i": [{"name": "SPA 04 2006 Pengurusan Insiden Keselamatan IT.pdf", "url": "https://drive.google.com/file/d/1l4OuWOVcF4nCfUGfQTUj92qYuOC7A0r2/view", "type": "application/pdf", "size": 1316138}, {"name": "Surat Edaran KPKK Bil 2 2022 Garis Panduan Keselamatan Bencana.pdf", "url": "https://drive.google.com/file/d/1IOzsG-3Pt8ULC-JQ_TWIjqMq5AQY6-mI/view", "type": "application/pdf", "size": 2311813}], "8.iv": [{"name": "Pemantauan Pengoperasian Kantin.pdf", "url": "https://drive.google.com/file/d/1jqsrMcdTYxXBkJ2GVbHq4ROzzRMX8o-o/view", "type": "application/pdf", "size": 524332}], "8.iii": [{"name": "Laporan Penilaian Kendiri Kantin.pdf", "url": "https://drive.google.com/file/d/1206LXC_xIHWC9qYke8bUVeXwaWwTKNzv/view", "type": "application/pdf", "size": 2657428}], "7.ii": [{"name": "Borang G 1 Anggerik.pdf", "url": "https://drive.google.com/file/d/1PUnmZNlGLTCaCOsxeeTKIAtNcjmDjjCa/view", "type": "application/pdf", "size": 985503}, {"name": "Borang G 2 Cempaka.pdf", "url": "https://drive.google.com/file/d/1TWERDNasQntHKtobOhqSu65_uFv3Hxy4/view", "type": "application/pdf", "size": 951741}, {"name": "Borang G 3 Siantan.pdf", "url": "https://drive.google.com/file/d/1kj-bprkl986eb0HTIB_cKW0QJbCOXvUj/view", "type": "application/pdf", "size": 927843}], "8.ii": [{"name": "Pengurusan Tender dan Sebut Harga.pdf", "url": "https://drive.google.com/file/d/1RbQ1oGJ0Y5Pi3BKq_rQKFNE_5iSh_uFA/view", "type": "application/pdf", "size": 1317286}, {"name": "Tender Kantin.pdf", "url": "https://drive.google.com/file/d/1eZq994IFyKtWJaT0Ij9os9QhHY4DpGQ4/view", "type": "application/pdf", "size": 1318585}], "8.i": [{"name": "Pekeliling Kantin.pdf", "url": "https://drive.google.com/file/d/1upPkQ_K914a9lYeCcC4Ic0gdcm3TAC4n/view", "type": "application/pdf", "size": 2431828}, {"name": "Surat Kantin.pdf", "url": "https://drive.google.com/file/d/1M3EmG7b14fZxWV0qfC7vIPAJ1NcgXabx/view", "type": "application/pdf", "size": 1783647}], "5.1": [{"name": "Garis Panduan Biasiswa Kecil Persekutuan Tahun 2024.pdf", "url": "https://drive.google.com/file/d/1jx8UJ03zF-gFF6oOYghrDZk0rl-X9Ww7/view", "type": "application/pdf", "size": 2410010}], "12": [{"name": "Penyertaan Peringkat Daerah.docx", "url": "https://drive.google.com/file/d/1sCj5Mon5-6Gvi5l8u9Bp_TWpTUOjkqEG/view", "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "size": 705788}, {"name": "Agensi Anti Dadah Kebangsaan (AADK).pdf", "url": "https://drive.google.com/file/d/174xnz8zVV7c4Sh0kUzjYBrvVrXl4O8ap/view", "type": "application/pdf", "size": 244253}, {"name": "Program Intelek Asuhan Rohani Pintar (PINTAR) 2.0.pdf", "url": "https://drive.google.com/file/d/1r4eeJImz0EZYcFQNNCx4Uo6G96De2crs/view", "type": "application/pdf", "size": 2551699}, {"name": "Penyertaan Peringkat Antarabangsa.docx", "url": "https://drive.google.com/file/d/1QbPKEizbep7N-tO9vU2k20gWFjSp3qji/view", "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "size": 768113}], "7.i": [{"name": "Peringatan Mematuhi Prosedur Kerja dan Peraturan (JPN PPD 2026).pdf", "url": "https://drive.google.com/file/d/1SUG8PyDQMRCzo08AdvldQNbaXrRViY1w/view", "type": "application/pdf", "size": 397130}, {"name": "SPI (Pekeliling SPBT).pdf", "url": "https://drive.google.com/file/d/1qtIDDa0vCu2PxTGfVo9QaK_2O5a8lcQV/view", "type": "application/pdf", "size": 4453398}], "4.1": [{"name": "Surat Pekeliling Kewangan Bil 4 2024 - Bantuan Kumpulan.pdf", "url": "https://drive.google.com/file/d/1nt0lsYPZPu3f9J18dJAzXEco_2YzZkNO/view", "type": "application/pdf", "size": 3340484}, {"name": "Surat Pengoperasian KWAPM Tahun 2026.pdf", "url": "https://drive.google.com/file/d/1jpbfsYxDYn8_Epppg5QIDefU5MjHcZb2/view", "type": "application/pdf", "size": 2630402}], "4.2": [{"name": "Senarai Penerima KWAPM.xlsx", "url": "https://drive.google.com/file/d/1dVACXEsi4lZ12fOOl1S9Sryt0HPZpeeZ/view", "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "size": 354874}], "9.i": [{"name": "Bengkel Pemerkasaan Pengurusan Sahsiah Disiplin.pdf", "url": "https://drive.google.com/file/d/18y80c2uMfDqoJN7bCAOOnOxOf-STWSsF/view", "type": "application/pdf", "size": 115345}, {"name": "Majlis Penyerahan Watikah Pelantikan dan Bengkel Penyelarasan Bil 1.pdf", "url": "https://drive.google.com/file/d/1pfHXHwp3GWYht9akzcfF3eFc7KT5q1Sd/view", "type": "application/pdf", "size": 471630}, {"name": "Mesyuarat JK Pembangunan Sahsiah Murid Negeri Selangor.pdf", "url": "https://drive.google.com/file/d/1Np5xxbYFA7nPJ5PvO_4DISwubeLhjq_M/view", "type": "application/pdf", "size": 998437}, {"name": "SPI 10/2001 - Semua Guru Adalah Guru Disiplin.pdf", "url": "https://drive.google.com/file/d/1HaHW2z2WXaJC-qHQMzHpVowTaodtkPER/view", "type": "application/pdf", "size": 177316}, {"name": "SPI 4/2020 - Penguatkuasaan Warna Kasut dan Stoking.pdf", "url": "https://drive.google.com/file/d/1yc9Mjl5ahcsY8jThkcTqAMRENWY1nUb5/view", "type": "application/pdf", "size": 74156}, {"name": "SPI 7/2011 - Pelaksanaan SOP Isu Disiplin.pdf", "url": "https://drive.google.com/file/d/17hLfnbdmg648HlHzRx-lgamfI7Mj79Cd/view", "type": "application/pdf", "size": 64445}, {"name": "SPI 8/2010 - Mencegah dan Menangani Buli.pdf", "url": "https://drive.google.com/file/d/19X3HWtO1dUyhCFeF_PIDGp5Gia-bo_7B/view", "type": "application/pdf", "size": 146818}, {"name": "Surat Lantikan Pembangunan Sahsiah.pdf", "url": "https://drive.google.com/file/d/1rOmZ8hUli52B_Ymn7KLceFKrnvi14HEf/view", "type": "application/pdf", "size": 543598}], "9.ii": [{"name": "Minit Mesyuarat Disiplin Bil 1.pdf", "url": "https://drive.google.com/file/d/1pxMVQuhi_PCiG_LyKy6rJFMiExKVHPIq/view", "type": "application/pdf", "size": 93536}], "9.iii": [{"name": "Bahan Rujukan Disiplin.pdf", "url": "https://drive.google.com/file/d/1mJ_FVi52oA3CQPbbxPNqammY0zsjC30P/view", "type": "application/pdf", "size": 917932}, {"name": "Buku Disiplin.docx", "url": "https://drive.google.com/file/d/1jYZvR1isfA9TB3WJZdFDwx28aHpOOO6n/view", "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "size": 913852}], "9.iv": [{"name": "Buku Kawalan Kelas (imbasan).jpeg", "url": "https://drive.google.com/file/d/1X_jVrJBpGHFLuST9AqPbewy7h3YtIggr/view", "type": "image/jpeg", "size": 99112}], "6.1": [{"name": "SPK Bil 5 Tahun 2024 - Bantuan Awal Persekolahan.pdf", "url": "https://drive.google.com/file/d/1kdlMXsU7idh7h5bAWODKoE48aWgR43iX/view", "type": "application/pdf", "size": 14729047}, {"name": "Surat Pelaksanaan Bantuan Awal Persekolahan (BAP) 2026.pdf", "url": "https://drive.google.com/file/d/1V6ZzOQsMlzNeocVz3y_OZcEawb6C4fk4/view", "type": "application/pdf", "size": 2212563}], "7.iv": [{"name": "Borang Pesanan SPBT.pdf", "url": "https://drive.google.com/file/d/1reLCOYBz9IlC52WW0PbrqIT5J1GeNE8F/view", "type": "application/pdf", "size": 2298073}], "3.7": [{"name": "Rekod Agihan Susu dan Tempat Penyimpanan (imbasan).jpeg", "url": "https://drive.google.com/file/d/1pAGYgaH6nc6wFAhjlDZhhNbxNQNgIGH8/view", "type": "image/jpeg", "size": 120327}, {"name": "Rekod Agihan Susu dan Tempat Penyimpanan.docx", "url": "https://drive.google.com/file/d/1iWRpXKb5w58oEPtUMJYNF81bDdMAOBVf/view", "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "size": 1866141}], "4.3": [{"name": "Baucar KWK0115.pdf", "url": "https://drive.google.com/file/d/1NEV4tyGAjsMJW8B656Mod3fZqAQBUHbj/view", "type": "application/pdf", "size": 3379410}, {"name": "Baucar KWK0162.pdf", "url": "https://drive.google.com/file/d/1m52imdTRMK5zeipDNxbTLLmOe7RwXvAM/view", "type": "application/pdf", "size": 4152056}, {"name": "Data Penerima KWAPM Tahun 2025.pdf", "url": "https://drive.google.com/file/d/1KG3ReMrJ7ijaN0I_4COyePfxsZSAoLTD/view", "type": "application/pdf", "size": 16105407}, {"name": "Subsidiari KWAPM.pdf", "url": "https://drive.google.com/file/d/1ejoSBNZnAzfpxH2EmtxItZby4JjROzDz/view", "type": "application/pdf", "size": 132239}], "3.2": [{"name": "Laporan Prestasi Kewangan.pdf", "url": "https://drive.google.com/file/d/1GrZni-jon_So_pSAQ_rqzfi1OYyVufGB/view", "type": "application/pdf", "size": 1795992}], "3.5": [{"name": "Menu RMT.jpeg", "url": "https://drive.google.com/file/d/14RpZSFTd-XJAO5DX--HNy0aDJoVxyuec/view", "type": "image/jpeg", "size": 225895}, {"name": "Sudut RMT.jpeg", "url": "https://drive.google.com/file/d/1e53frJaZ3yOPJMEdXvPML5lrAhkQEvdh/view", "type": "image/jpeg", "size": 386459}], "3.4": [{"name": "Laporan Akademik dan Fizikal.xlsx", "url": "https://drive.google.com/file/d/1YdAxS4kmLphKF_J1rLX10_cIip2XC-fM/view", "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "size": 53305}], "1.8": [{"name": "Takwim HEM.pdf", "url": "https://drive.google.com/file/d/1HpxfCVZCD-wR5CYDi8hPeJo-s2hDpG7B/view", "type": "application/pdf", "size": 518814}], "3.1": [{"name": "Panduan Pengurusan Program Susu Sekolah 2022 v1.0.pdf", "url": "https://drive.google.com/file/d/1ouTy42WWE7VwU4H0hIL45A5wlomUpJuW/view", "type": "application/pdf", "size": 2831484}, {"name": "Pelaksanaan Program Susu Sekolah Tahun 2026.pdf", "url": "https://drive.google.com/file/d/1Zd1WrrO8DZbhP9f3DX8AfGLjHlLaVKH5/view", "type": "application/pdf", "size": 2569288}, {"name": "Pemakluman Kenaikan Kadar RMT (RM1).pdf", "url": "https://drive.google.com/file/d/1ywokJFSvwxPA9seDF4ccgEAz0Mlzll87/view", "type": "application/pdf", "size": 163287}, {"name": "Surat Pekeliling Kewangan BT 19 - RMT.pdf", "url": "https://drive.google.com/file/d/1BXmD50iHFwrqtlTNzVCsI_bMvMlZtuyS/view", "type": "application/pdf", "size": 2193102}, {"name": "Surat Pelaksanaan Program RMT KPM.pdf", "url": "https://drive.google.com/file/d/1Etwg5T36a4_pd6T1LYPV1vcPRije4PN4/view", "type": "application/pdf", "size": 876207}, {"name": "Surat Penambahbaikan Pelaksanaan Program RMT.pdf", "url": "https://drive.google.com/file/d/1MkXRfiG7PLQ2kHNaBsinNXaWvfeo6eNg/view", "type": "application/pdf", "size": 2121853}], "2.1": [{"name": "Minit Mesyuarat JK Bantuan Peringkat Sekolah.pdf", "url": "https://drive.google.com/file/d/19E-UgAdtdTBtuBwqatl7lQz4T3uFwiMs/view", "type": "application/pdf", "size": 302645}], "1.5": [{"name": "Surat Penyerahan Semula Jawatankuasa.pdf", "url": "https://drive.google.com/file/d/1rnwtS3H3p_G6KydiNZXFFh9fPAvceC-P/view", "type": "application/pdf", "size": 456632}], "1.3": [{"name": "PSO Induk SK Jenjarom 2021-2025 (semakan 2022).pdf", "url": "https://drive.google.com/file/d/1JP0jHQXIa5QfcKPcxQPgRh5yzH2DcTay/view", "type": "application/pdf", "size": 11849131}], "10.iv": [{"name": "Laporan Program Pengungsian Bangunan 2026.pdf", "url": "https://drive.google.com/file/d/15NKptzb80cwyGRRVCT35XNCyWNHpQ7aG/view", "type": "application/pdf", "size": 1479869}], "1.7": [{"name": "Minit Mesyuarat Induk HEM Bil 1.pdf", "url": "https://drive.google.com/file/d/1ju5a1SOYBz9iV8hWpHhObvNv_C7d5p0f/view", "type": "application/pdf", "size": 205696}], "1.6": [{"name": "Data Enrolmen Murid.jpeg", "url": "https://drive.google.com/file/d/1Au_e2ng36oF3hkOQXA3qks_lGmN_Sz2-/view", "type": "image/jpeg", "size": 115424}], "1.1": [{"name": "Jawatankuasa HEM dan Bidang Tugas 2026.pdf", "url": "https://drive.google.com/file/d/1Drp5VX2swHV08QAOitxtovBl4eERznYe/view", "type": "application/pdf", "size": 1679173}], "1.4": [{"name": "Pelantikan Jawatankuasa HEM - Guru Sesi Pagi.pdf", "url": "https://drive.google.com/file/d/1EvlQP6KTtSV8O82_4Yus1yNBkZF6sp-A/view", "type": "application/pdf", "size": 3353521}, {"name": "Pelantikan Jawatankuasa HEM - Guru Sesi Petang.pdf", "url": "https://drive.google.com/file/d/190ed_pj2OhizQdJhShpQjGkvMr9kt4bX/view", "type": "application/pdf", "size": 1513283}], "11.ii": [{"name": "Dokumen Pengurusan Kesihatan.docx", "url": "https://drive.google.com/file/d/1_ZGVT6ByxAfvCSG_WveMPaVdTEFEiStd/view", "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "size": 1663503}], "10.ii": [{"name": "Laporan Keselamatan SPKS Sekolah 2025.pdf", "url": "https://drive.google.com/file/d/1-hovBMe2-i63hIApdW5F_Cj7EFhgv82j/view", "type": "application/pdf", "size": 800441}], "1.2": [{"name": "Carta Organisasi.pdf", "url": "https://drive.google.com/file/d/1ZpGYRD9LS2rAEkw7Ek0pBUgBG1lbww2g/view", "type": "application/pdf", "size": 318777}]};
 const DRIVELINKS = {"2.2": {"label": "Borang PB1, PB2 & Dokumen Sokongan (folder Google Drive)", "url": "https://drive.google.com/drive/folders/1VWhSPRkwX7qCcZYIbAb4QzPLU1w8aSXB"}, "3.3": {"label": "Laporan Guru Bertugas / Pemantauan Harian (folder Google Drive)", "url": "https://drive.google.com/drive/folders/1APgao3zJlFoXSI5ebLioSBLKXwpffzB3"}, "3.6": {"label": "Surat Setuju Terima RMT/PSS (folder Google Drive)", "url": "https://drive.google.com/drive/folders/1fC2LpFAefYi6M8gQ3-8G0bS3EmtAekYz"}};
+/* ==== AKP HEM sync+admin engine ==== */
+/* ============================================================
+   AKP HEM 2026 — Drive link overrides (3 kemaskini) +
+   Penyegerakan merentas peranti (Supabase) + Mod Urus dokumen
+   ============================================================ */
+
+/* ---- (1) Kemaskini pautan dokumen ---- */
+DRIVEFILES["1.7"] = [
+  {"name":"Maklum Balas Minit Mesyuarat HEM Bil 1 (2026).pdf","url":"https://drive.google.com/file/d/1L-SPvvgh4Jl7Yc7GMPUMoQ8CiA-OAa7B/view","type":"application/pdf","size":433567},
+  {"name":"Minit Mesyuarat HEM Bil 2.pdf","url":"https://drive.google.com/file/d/1Z0c-gjySWGHJFQSjNN35UdWtVcZsgRBs/view","type":"application/pdf","size":168711},
+  {"name":"Maklum Balas Minit Mesyuarat HEM Bil 2.pdf","url":"https://drive.google.com/file/d/1SANd5tCIFrB5iV4hAHebcCVSdtVpVkoZ/view","type":"application/pdf","size":286720}
+];
+
+DRIVEFILES["9.i"] = [
+  {"section":"SPI","name":"SPI Bil 10/2001 - Semua Guru Adalah Guru Disiplin.pdf","url":"https://drive.google.com/file/d/1rj7MhFY1BtVGt3sLbb166EJIRdDraRUC/view","type":"application/pdf","size":177316},
+  {"section":"SPI","name":"SPI Bil 4/2020 - Penguatkuasaan Warna Kasut dan Stoking.pdf","url":"https://drive.google.com/file/d/1E5D-eXl24WfTnJVQPI8Q_drBElvNBXi4/view","type":"application/pdf","size":236317},
+  {"section":"SPI","name":"SPI Bil 8/2010 - Garis Panduan Mencegah dan Menangani Buli.pdf","url":"https://drive.google.com/file/d/1f4aqY02L9cZYWS1NhupKSm6ZnAWWpbXV/view","type":"application/pdf","size":320963},
+  {"section":"SPI","name":"Arahan Pelaksanaan & Pematuhan Pekeliling Pengurusan Salah Laku Murid.pdf","url":"https://drive.google.com/file/d/1Q0xN1_xZaF_8tKkm-m5W-9-WfHoLkekj/view","type":"application/pdf","size":1311300},
+  {"section":"SURAT","name":"Pelantikan JK Pembangunan Sahsiah Murid (Disiplin) Tahun 2026.pdf","url":"https://drive.google.com/file/d/1XAYY9pdwn1NFUl-1uHkQ2xVLCuCf0D54/view","type":"application/pdf","size":464574},
+  {"section":"SURAT","name":"Mesyuarat JK Pembangunan Sahsiah Murid Negeri Selangor Tahun 2026.pdf","url":"https://drive.google.com/file/d/1JHvEQtQ3SkPU-D5GJ9J8fu9TeKn4S-4E/view","type":"application/pdf","size":763254},
+  {"section":"SURAT","name":"Majlis Penyerahan Watikah Pelantikan & Bengkel Penyelarasan Bil 1 Tahun 2026.pdf","url":"https://drive.google.com/file/d/1zpLn4rhhJSo1wfb3Vdqh7tq7NulDLK1e/view","type":"application/pdf","size":4196409},
+  {"section":"SURAT","name":"Bengkel Pemerkasaan Pengurusan Sahsiah & Disiplin Kuala Langat Tahun 2026.pdf","url":"https://drive.google.com/file/d/1kErKMrYCfJQLK5i5Gq3QCopbST2FfBSC/view","type":"application/pdf","size":1080910},
+  {"section":"SURAT","name":"Arahan Pelaksanaan & Pematuhan Pekeliling Pengurusan Salah Laku Murid di Institusi Pendidikan.pdf","url":"https://drive.google.com/file/d/1y71sPnAyWg14PweWE1FmbyU6XrcFadDo/view","type":"application/pdf","size":1311300}
+];
+
+DRIVEFILES["9.iv"] = [
+  {"name":"Buku Kawalan Kelas (imbasan).jpeg","url":"https://drive.google.com/file/d/1X_jVrJBpGHFLuST9AqPbewy7h3YtIggr/view","type":"image/jpeg","size":99112},
+  {"name":"Buku Kawalan Kelas (Canva)","url":"https://canva.link/sy3ff6klm5kts3u","type":"link/canva","size":0}
+];
+
+/* ============================================================
+   PENYEGERAKAN AWAN (SUPABASE) — sila isi 3 baris di bawah.
+   Tanpa diisi, sistem tetap berfungsi & simpan di peranti ini sahaja.
+   Cara dapatkan: Supabase > Project Settings > API
+   ============================================================ */
+const SB = {
+  url:  "",   // <-- Project URL, cth: https://abcd1234.supabase.co
+  anon: "",   // <-- anon public key (kunci awam)
+  pass: "akphem2026"   // <-- kata laluan Mod Urus (sila tukar)
+};
+
+const OVR = "akphem2026_files_ovr";
+let LIVE = {};
+let ADMIN = false;
+let SB_ON = false;
+let ATTACH_KOD = null;
+
+function uid(){ try{ return crypto.randomUUID(); }catch(e){ return 'id'+Date.now()+Math.random().toString(16).slice(2); } }
+function sbBase(){ let b=SB.url||''; while(b.endsWith('/')) b=b.slice(0,-1); return b; }
+function deepSeed(){ const o={}; for(const k in DRIVEFILES){ o[k]=DRIVEFILES[k].map(function(f){ return Object.assign({id:uid(),section:f.section||''}, f); }); } return o; }
+function cacheLocal(){ try{ localStorage.setItem(OVR, JSON.stringify(LIVE)); }catch(e){} }
+function loadLocal(){ try{ const r=localStorage.getItem(OVR); return r?JSON.parse(r):null; }catch(e){ return null; } }
+
+function sbHeaders(extra){ return Object.assign({ apikey:SB.anon, Authorization:'Bearer '+SB.anon, 'Content-Type':'application/json' }, extra||{}); }
+function sbSelectAll(){
+  return fetch(sbBase()+'/rest/v1/documents?select=*&order=kod.asc,pos.asc', {headers:sbHeaders()})
+    .then(function(r){ if(!r.ok) throw new Error('select '+r.status); return r.json(); });
+}
+function sbInsert(rows){
+  return fetch(sbBase()+'/rest/v1/documents', {method:'POST', headers:sbHeaders({Prefer:'return=representation'}), body:JSON.stringify(rows)})
+    .then(function(r){ if(!r.ok) throw new Error('insert '+r.status); return r.json(); });
+}
+function sbUpdate(id, patch){
+  return fetch(sbBase()+'/rest/v1/documents?id=eq.'+encodeURIComponent(id), {method:'PATCH', headers:sbHeaders({Prefer:'return=representation'}), body:JSON.stringify(patch)})
+    .then(function(r){ if(!r.ok) throw new Error('update '+r.status); return r.json(); });
+}
+function sbDelete(id){
+  return fetch(sbBase()+'/rest/v1/documents?id=eq.'+encodeURIComponent(id), {method:'DELETE', headers:sbHeaders()})
+    .then(function(r){ if(!r.ok) throw new Error('delete '+r.status); });
+}
+function rowsToLive(rows){ const o={}; rows.forEach(function(x){ (o[x.kod]=o[x.kod]||[]).push({id:x.id,name:x.name,url:x.url,type:x.ftype||'',size:x.size||0,section:x.section||''}); }); return o; }
+function liveToRows(){ const rows=[]; for(const k in LIVE){ LIVE[k].forEach(function(f,idx){ rows.push({kod:k,name:f.name,url:f.url,ftype:f.type||'',size:f.size||0,section:f.section||null,pos:idx}); }); } return rows; }
+
+function syncInit(){
+  LIVE = deepSeed();
+  const loc = loadLocal(); if(loc && Object.keys(loc).length) LIVE = loc;
+  SB_ON = !!(SB.url && SB.anon);
+  if(!SB_ON){ return Promise.resolve(); }
+  return sbSelectAll().then(function(rows){
+    if(!rows.length){ return sbInsert(liveToRows()); }
+    return rows;
+  }).then(function(rows){
+    LIVE = rowsToLive(rows); cacheLocal();
+    try{ toast('Segerak awan \u2713'); }catch(e){}
+    if(ATTACH_KOD) renderAttach(ATTACH_KOD);
+  }).catch(function(e){ SB_ON=false; try{ console.warn('Supabase off:', e.message); }catch(_){} });
+}
+
+/* ---- Mutasi (tambah / sunting / padam) ---- */
+function addEntry(kod, f){
+  f = Object.assign({id:uid(), section:''}, f);
+  const finish = function(){ (LIVE[kod]=LIVE[kod]||[]).push(f); cacheLocal(); renderAttach(kod); try{ toast('Pautan ditambah'); }catch(e){} };
+  if(SB_ON){
+    sbInsert([{kod:kod,name:f.name,url:f.url,ftype:f.type||'',size:f.size||0,section:f.section||null,pos:(LIVE[kod]?LIVE[kod].length:0)}])
+      .then(function(rows){ if(rows&&rows[0]&&rows[0].id) f.id=rows[0].id; finish(); })
+      .catch(function(){ try{ toast('Gagal ke awan, simpan di peranti'); }catch(e){} finish(); });
+  } else { finish(); }
+}
+function editEntry(kod, id, patch){
+  const arr=LIVE[kod]||[]; const it=arr.find(function(x){ return x.id===id; }); if(!it) return;
+  Object.assign(it, patch);
+  const finish=function(){ cacheLocal(); renderAttach(kod); try{ toast('Dikemaskini'); }catch(e){} };
+  if(SB_ON){
+    sbUpdate(id, {name:it.name,url:it.url,ftype:it.type||'',size:it.size||0,section:it.section||null})
+      .then(finish).catch(function(){ try{ toast('Gagal kemaskini awan'); }catch(e){} finish(); });
+  } else { finish(); }
+}
+function delEntry(kod, id){
+  LIVE[kod]=(LIVE[kod]||[]).filter(function(x){ return x.id!==id; });
+  const finish=function(){ cacheLocal(); renderAttach(kod); try{ toast('Dipadam'); }catch(e){} };
+  if(SB_ON){ sbDelete(id).then(finish).catch(function(){ try{ toast('Gagal padam di awan'); }catch(e){} finish(); }); }
+  else { finish(); }
+}
+
+/* ---- Render bantuan (seksyen + butang urus) ---- */
+function fmtMeta(f){
+  if(f.type && f.type.indexOf('link')===0){ return (f.url && f.url.indexOf('canva')>-1)?'Pautan Canva':'Pautan luar'; }
+  if(f.size>0){ return 'Google Drive \u00b7 '+fmtSize(f.size); }
+  return 'Google Drive';
+}
+function builtinItemHTML(f){
+  const openBtn='<button data-dopen="'+esc(f.url)+'" title="Buka"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></button>';
+  let right;
+  if(ADMIN){
+    right='<button class="adm" data-edit="'+esc(f.id)+'" title="Sunting"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button>'
+      +'<button class="adm del" data-del2="'+esc(f.id)+'" title="Padam"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button>';
+  } else {
+    right='<span class="lockbtn" title="Dokumen sistem (Google Drive)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span>';
+  }
+  return '<div class="fileitem builtin"><div class="fi" data-dopen="'+esc(f.url)+'"><b>'+esc(f.name)+'</b><small>'+fmtMeta(f)+'</small></div>'+openBtn+right+'</div>';
+}
+function renderBuiltinGrouped(built, kod){
+  let html='';
+  html+=built.filter(function(f){ return !f.section; }).map(builtinItemHTML).join('');
+  const secs=[]; built.forEach(function(f){ if(f.section && secs.indexOf(f.section)<0) secs.push(f.section); });
+  secs.forEach(function(sec){
+    html+='<div class="sechead">'+esc(sec)+'</div>';
+    html+=built.filter(function(f){ return f.section===sec; }).map(builtinItemHTML).join('');
+  });
+  return html;
+}
+function bindAdmin(w, kod){
+  w.querySelectorAll('[data-edit]').forEach(function(b){ b.onclick=function(){ openEditModal(kod, b.getAttribute('data-edit')); }; });
+  w.querySelectorAll('[data-del2]').forEach(function(b){ b.onclick=function(){ if(confirm('Padam pautan ini? Jika segerak awan aktif, ia dipadam untuk semua peranti.')) delEntry(kod, b.getAttribute('data-del2')); }; });
+}
+
+/* ---- Mod Urus + butang panel ---- */
+function syncAdminButtons(){
+  const a=document.getElementById('addLinkBtn'), t=document.getElementById('admBtn');
+  if(a) a.style.display = ADMIN ? '' : 'none';
+  if(t) t.textContent = ADMIN ? '\ud83d\udd12 Tutup mod urus' : '\ud83d\udd27 Urus pautan Drive';
+}
+function toggleAdmin(){
+  if(ADMIN){ ADMIN=false; try{ toast('Mod urus ditutup'); }catch(e){} if(ATTACH_KOD) renderAttach(ATTACH_KOD); syncAdminButtons(); return; }
+  const p=prompt('Kata laluan Mod Urus dokumen:'); if(p===null) return;
+  if(p===SB.pass){ ADMIN=true; try{ toast('Mod urus dibuka'); }catch(e){} if(ATTACH_KOD) renderAttach(ATTACH_KOD); syncAdminButtons(); }
+  else { try{ toast('Kata laluan salah'); }catch(e){} }
+}
+function wireAdminPanel(kod){
+  const admBtn=document.getElementById('admBtn'); if(admBtn) admBtn.onclick=function(){ toggleAdmin(); };
+  const addLink=document.getElementById('addLinkBtn'); if(addLink) addLink.onclick=function(){ openAddModal(kod); };
+  syncAdminButtons();
+}
+
+/* ---- Modal tambah/sunting ---- */
+function closeDocModal(){ const m=document.getElementById('docModal'); if(m) m.remove(); }
+function guessType(url){ url=(url||'').toLowerCase(); if(url.indexOf('canva.')>-1) return 'link/canva'; if(url.indexOf('drive.google')>-1) return 'application/pdf'; if(url.indexOf('http')===0) return 'link/url'; return 'application/pdf'; }
+function openDocModal(opts){
+  closeDocModal();
+  const m=document.createElement('div'); m.id='docModal'; m.className='docmodal';
+  m.innerHTML='<div class="dm-card"><div class="dm-h">'+esc(opts.title)+'</div>'
+    +'<label>Nama dokumen</label><input id="dm-name" type="text" value="'+esc(opts.name||'')+'" placeholder="cth: Minit Mesyuarat HEM Bil 3">'
+    +'<label>Pautan URL (Google Drive / Canva / lain)</label><input id="dm-url" type="text" value="'+esc(opts.url||'')+'" placeholder="https://drive.google.com/file/d/.../view">'
+    +'<label>Seksyen (pilihan \u2014 cth SPI / SURAT, kosongkan jika tiada)</label><input id="dm-sec" type="text" value="'+esc(opts.section||'')+'" placeholder="kosongkan jika tiada">'
+    +'<div class="dm-btns"><button class="dm-cancel">Batal</button><button class="dm-save">Simpan</button></div></div>';
+  document.body.appendChild(m);
+  m.addEventListener('click', function(e){ if(e.target===m) closeDocModal(); });
+  m.querySelector('.dm-cancel').onclick=closeDocModal;
+  m.querySelector('.dm-save').onclick=function(){
+    const name=m.querySelector('#dm-name').value.trim();
+    const url=m.querySelector('#dm-url').value.trim();
+    const section=m.querySelector('#dm-sec').value.trim();
+    if(!name||!url){ try{ toast('Isi nama & pautan dulu'); }catch(e){} return; }
+    opts.onSave({name:name,url:url,section:section}); closeDocModal();
+  };
+  setTimeout(function(){ const n=m.querySelector('#dm-name'); if(n) n.focus(); }, 30);
+}
+function openAddModal(kod){
+  openDocModal({title:'Tambah pautan dokumen', onSave:function(v){ addEntry(kod, {name:v.name, url:v.url, section:v.section, type:guessType(v.url), size:0}); }});
+}
+function openEditModal(kod, id){
+  const it=(LIVE[kod]||[]).find(function(x){ return x.id===id; }); if(!it) return;
+  openDocModal({title:'Sunting dokumen', name:it.name, url:it.url, section:it.section, onSave:function(v){ editEntry(kod, id, {name:v.name, url:v.url, section:v.section, type:it.type||guessType(v.url)}); }});
+}
+
+/* ---- Mula penyegerakan bila app sedia ---- */
+try{ syncInit(); }catch(e){ try{ console.warn(e); }catch(_){} }
+
+/* ==== end engine ==== */
 let model;
 try{ const r=localStorage.getItem(MK); model = r?JSON.parse(r):JSON.parse(JSON.stringify(SEED)); }catch(e){ model=JSON.parse(JSON.stringify(SEED)); }
 function saveModel(){ try{ localStorage.setItem(MK, JSON.stringify(model)); }catch(e){} }
@@ -337,20 +554,20 @@ function bindAttach(w,kod){
   });
 }
 function renderAttach(kod){
-  const built=(DRIVEFILES[kod]||[]); const drv=DRIVELINKS[kod]||null;
+  const built=((typeof LIVE!=='undefined' && LIVE[kod]) ? LIVE[kod] : (DRIVEFILES[kod]||[])); const drv=DRIVELINKS[kod]||null;
   const draw=(list)=>{
     const w=document.getElementById('attachList'); if(!w)return; list=list||[];
     let html='';
-    html+=built.map(f=>`<div class="fileitem builtin"><div class="fi" data-dopen="${esc(f.url)}"><b>${esc(f.name)}</b><small>Google Drive · ${fmtSize(f.size)}</small></div><button data-dopen="${esc(f.url)}" title="Buka di Google Drive"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></button><span class="lockbtn" title="Dokumen sistem (Google Drive)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span></div>`).join('');
+    html+=renderBuiltinGrouped(built, kod);
     if(drv) html+=`<div class="fileitem drive"><div class="fi" data-dopen="${esc(drv.url)}"><b>${esc(drv.label)}</b><small>Ketik untuk buka folder di Google Drive</small></div><button data-dopen="${esc(drv.url)}" title="Buka di Google Drive"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></button></div>`;
     html+=list.map(f=>`<div class="fileitem" data-id="${f.id}"><div class="fi" data-open><b>${esc(f.name)}</b><small>${fmtSize(f.size)}</small></div><button data-open title="Buka"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></button><button class="del" data-del title="Buang"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button></div>`).join('');
     if(!html){ w.innerHTML='<div class="imgnote" style="text-align:left;margin:0 0 9px;color:var(--faint)">Belum ada fail dilampirkan.</div>'; return; }
-    w.innerHTML=html; bindAttach(w,kod);
+    w.innerHTML=html; bindAttach(w,kod); bindAdmin(w,kod);
   };
   fileList(kod).then(draw).catch(()=>draw([]));
 }
 function setupAttach(kod){
-  renderAttach(kod);
+  ATTACH_KOD=kod; renderAttach(kod); wireAdminPanel(kod);
   const btn=document.getElementById('addFileBtn'), inp=document.getElementById('fileInput'); if(!btn)return;
   btn.onclick=()=>inp.click();
   inp.onchange=e=>{ const f=e.target.files[0]; if(!f)return; if(f.size>15*1048576 && !confirm('Fail agak besar ('+fmtSize(f.size)+'). Teruskan? Fail besar boleh penuhkan storan peranti.')){ inp.value=''; return; } fileAdd(kod,f).then(()=>{ renderAttach(kod); toast('Fail dilampirkan'); }).catch(()=>toast('Gagal simpan fail')); inp.value=''; };
@@ -424,7 +641,7 @@ function openItem(kod,push=true){
     <div class="block"><div class="bt">Dokumen diperlukan</div></div>
     <div class="card2"><div class="pad"><div class="docs" id="docs">${docHtml}</div></div></div>
     <div class="block"><div class="bt">Lampiran fail</div></div>
-    <div class="card2"><div class="pad"><div id="attachList"></div><button class="addfile" id="addFileBtn">＋ Lampiran fail</button><input type="file" id="fileInput" style="display:none"/><div class="imgnote" style="text-align:left;margin-top:9px">Dokumen rasmi (kuning) dibuka terus dari Google Drive sekolah. Lampiran tambahan anda disimpan dalam peranti ini sahaja.</div></div></div>
+    <div class="card2"><div class="pad"><div id="attachList"></div><button class="addfile" id="addFileBtn">＋ Lampiran fail</button><button class="addfile" id="addLinkBtn" style="display:none">＋ Tambah pautan Drive</button><button class="addfile" id="admBtn" style="opacity:.85">🔧 Urus pautan Drive</button><input type="file" id="fileInput" style="display:none"/><div class="imgnote" style="text-align:left;margin-top:9px">Dokumen rasmi (kuning) dibuka terus dari Google Drive sekolah. Lampiran tambahan anda disimpan dalam peranti ini sahaja.</div></div></div>
     ${extra}
     <div class="block"><div class="bt">Skor &amp; catatan</div></div>
     <div class="card2 scorecard"><div class="pad">
